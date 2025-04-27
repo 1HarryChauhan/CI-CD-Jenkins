@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Stage 1: Building the code using Maven or Gradle"
+                echo "Stage 1: Building the code using Maven or Gradle "
             }
         }
 
         stage('Unit and Integration Tests') {
             steps {
-                echo "Stage 2: Running Unit and Integration Tests using Surefire/JUnit, Jacoco"
+                echo "Stage 2: Running Unit and Integration Tests using JUnit, Jacoco"
             }
             post {
                 success {
