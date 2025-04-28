@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Stage 1: Building the code using Maven or Gradle         "
+                echo "Stage 1: Building the code using Maven or Gradle"
             }
         }
 
@@ -14,7 +14,7 @@ pipeline {
             }
             post {
                 success {
-                    mail(
+                    emailext(
                         to: "harjot4780.be23@chitkara.edu.in",
                         subject: "Unit and Integration Test Stage: Success",
                         body: "Unit and Integration Test Stage was successful.",
@@ -22,14 +22,14 @@ pipeline {
                     )
                 }
                 failure {
-                    mail(
+                    emailext(
                         to: "harjot4780.be23@chitkara.edu.in",
                         subject: "Unit and Integration Test Stage: Failure",
                         body: "Unit and Integration Test Stage failed.",
                         attachLog: true
                     )
                 }
-        }
+            }
         }
 
         stage('Code Analysis') {
@@ -44,7 +44,7 @@ pipeline {
             }
             post {
                 success {
-                    mail(
+                    emailext(
                         to: "harjot4780.be23@chitkara.edu.in",
                         subject: "Security Scan Stage: Success",
                         body: "The security scan stage was successful.",
@@ -52,14 +52,14 @@ pipeline {
                     )
                 }
                 failure {
-                    mail(
+                    emailext(
                         to: "harjot4780.be23@chitkara.edu.in",
                         subject: "Security Scan Stage: Failure",
                         body: "The security scan stage failed.",
                         attachLog: true
                     )
                 }
-        }
+            }
         }
 
         stage('Deploy to Staging') {
@@ -74,7 +74,7 @@ pipeline {
             }
             post {
                 success {
-                    mail(
+                    emailext(
                         to: "harjot4780.be23@chitkara.edu.in",
                         subject: "Integration Tests on Staging Stage: Success",
                         body: "Integration Tests on Staging stage was successful.",
@@ -82,19 +82,19 @@ pipeline {
                     )
                 }
                 failure {
-                    mail(
+                    emailext(
                         to: "harjot4780.be23@chitkara.edu.in",
                         subject: "Integration Tests on Staging Stage: Failure",
                         body: "Integration Tests on Staging Stage failed.",
                         attachLog: true
                     )
                 }
-        }
+            }
         }
 
         stage('Deploy to Production') {
             steps {
-                echo "Stage 7: Deploying to Production Environment ,For example:  using AWS "
+                echo "Stage 7: Deploying to Production Environment, e.g., using AWS"
             }
         }
     }
