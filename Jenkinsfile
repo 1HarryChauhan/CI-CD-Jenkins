@@ -16,7 +16,7 @@ pipeline {
                 success {
                     emailext(
                         to: "harjot4780.be23@chitkara.edu.in",
-                        subject: "Unit and Integration Test Stage: Success",
+                        subject: "All unit and integration tests passed successfully.",
                         body: "Unit and Integration Test Stage was successful.",
                         attachLog: true
                     )
@@ -76,7 +76,7 @@ pipeline {
                 success {
                     emailext(
                         to: "harjot4780.be23@chitkara.edu.in",
-                        subject: "Integration Tests on Staging Stage: Success",
+                        subject: "All unit and integration tests passed successfully.",
                         body: "Integration Tests on Staging stage was successful.",
                         attachLog: true
                     )
