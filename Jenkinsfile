@@ -14,7 +14,7 @@ pipeline {
             }
             post {
                 success {
-                    emailext(
+                    mail(
                         to: "harjot4780.be23@chitkara.edu.in",
                         subject: "Unit and Integration Test Stage: Success",
                         body: "Unit and Integration Test Stage was successful.",
@@ -22,7 +22,7 @@ pipeline {
                     )
                 }
                 failure {
-                    emailext(
+                    mail(
                         to: "harjot4780.be23@chitkara.edu.in",
                         subject: "Unit and Integration Test Stage: Failure",
                         body: "Unit and Integration Test Stage failed.",
@@ -44,7 +44,7 @@ pipeline {
             }
             post {
                 success {
-                    emailext(
+                    mail(
                         to: "harjot4780.be23@chitkara.edu.in",
                         subject: "Security Scan Stage: Success",
                         body: "The security scan stage was successful.",
@@ -52,7 +52,7 @@ pipeline {
                     )
                 }
                 failure {
-                    emailext(
+                    mail(
                         to: "harjot4780.be23@chitkara.edu.in",
                         subject: "Security Scan Stage: Failure",
                         body: "The security scan stage failed.",
@@ -74,7 +74,7 @@ pipeline {
             }
             post {
                 success {
-                    emailext(
+                    mail(
                         to: "harjot4780.be23@chitkara.edu.in",
                         subject: "Integration Tests on Staging Stage: Success",
                         body: "Integration Tests on Staging stage was successful.",
@@ -82,7 +82,7 @@ pipeline {
                     )
                 }
                 failure {
-                    emailext(
+                    mail(
                         to: "harjot4780.be23@chitkara.edu.in",
                         subject: "Integration Tests on Staging Stage: Failure",
                         body: "Integration Tests on Staging Stage failed.",
